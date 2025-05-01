@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<!-- Mirrored from themesbrand.com/velzon/html/creative/job-landing.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Apr 2024 19:54:55 GMT -->
+<head>
+
+    <meta charset="utf-8" />
+    <title>Objets Perdus, Objets Trouvés - Retrouver vos objets sur retrivio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" th:href="@{/images/favicon.ico}">
+
+    <!--Swiper slider css-->
+    <link th:href="@{/libs/swiper/swiper-bundle.min.css}" rel="stylesheet" type="text/css" />
+
+    <!-- Layout config Js -->
+    <script th:src="@{/js/layout.js}"></script>
+    <!-- Bootstrap Css -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link th:href="@{/css/icons.min.css}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link th:href="@{/css/app.min.css}" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link th:href="@{/css/custom.min.css}" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+
+    <!-- Begin page -->
+    <div class="layout-wrapper landing">
+        <nav class="navbar navbar-expand-lg navbar-landing fixed-top job-navbar" id="navbar">
+            <div class="container-fluid custom-container">
+                <a class="navbar-brand" th:href="@{/}">
+                    <h1>Retrivio</h1>
+                </a>
+                <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
+                        <li class="nav-item">
+                            <a class="nav-link fs-16 active" href="#hero">Acceuil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-16" href="#process">Procédure</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-16" href="#categories">Témoignages</a>
+                        </li>
+
+                    </ul>
+
+                    <div class="">
+                        <a th:href="@{/login/}" class="btn btn-primary"><i class="ri-user-3-line align-bottom me-1"></i> Espace Administrateur</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+        <!-- end navbar -->
+
+        <!-- start hero section -->
+        <section class="section job-hero-section bg-light pb-0" id="hero">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-lg-6">
+                        <div>
+                            <h1 class="display-6 fw-bold text-capitalize mb-3 lh-base">Un objet perdu se transforme souvent en objet trouvé ! </h1>
+                            <p class="lead text-muted lh-base mb-4">Vous avez perdu ou trouvé un objet ? Déclarez-le et la communauté se mobilise pour vous aider à le retrouver. </p>
+
+                            <div class="d-flex justify-content-between">
+                                <div class="">
+                                    <a th:href="@{/lost/create}" class="btn btn-primary waves-effect waves-light" style="width: 250px;">J'ai Perdu</a>
+                                </div>
+
+                                <div class="">
+                                    <a th:href="@{/found/create}" class=" btn btn-outline-primary waves-effect waves-light" style="width: 250px;"> J'ai Trouvé</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--end col-->
+                    <div class="col-lg-4">
+                        <div class="position-relative home-img text-center mt-5 mt-lg-0">
+                            <div class="card p-3 rounded shadow-lg inquiry-box">
+                                 <div class="d-flex align-items-center">
+                                    <div class="avatar-sm flex-shrink-0 me-3">
+                                        <div class="avatar-title bg-danger-subtle text-danger rounded fs-18">
+                                            <i class="ri-mail-send-line"></i>
+                                        </div>
+                                    </div>
+                                    <h5 class="fs-15 lh-base mb-0">Retrouvez vos objets perdus</h5>
+                                </div>
+                            </div>
+
+                            <div class="card p-3 rounded shadow-lg application-box">
+                                <h5 class="fs-15 lh-base mb-3">Témoignages</h5>
+                                <div class="avatar-group">
+                                    <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Brent Gonzalez">
+                                        <div class="avatar-xs">
+                                            <img th:src="@{/images/users/avatar-3.jpg}" alt="" class="rounded-circle img-fluid">
+                                        </div>
+                                    </a>
+                                    <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Ellen Smith">
+                                        <div class="avatar-xs">
+                                            <div class="avatar-title rounded-circle bg-danger">
+                                                S
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Ellen Smith">
+                                        <div class="avatar-xs">
+                                            <img th:src="@{/images/users/avatar-10.jpg}" alt="" class="rounded-circle img-fluid">
+                                        </div>
+                                    </a>
+                                    <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top">
+                                        <div class="avatar-xs">
+                                            <div class="avatar-title rounded-circle bg-success">
+                                                Z
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Brent Gonzalez">
+                                        <div class="avatar-xs">
+                                            <img th:src="@{/images/users/avatar-9.jpg}" alt="" class="rounded-circle img-fluid">
+                                        </div>
+                                    </a>
+                                    <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="More Appliances">
+                                        <div class="avatar-xs">
+                                            <div class="avatar-title fs-13 rounded-circle bg-light border-dashed border text-primary">
+                                                2+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <img th:src="@{/images/job-profile2.png}" alt="" class="user-img">
+
+                            <div class="circle-effect">
+                                <div class="circle"></div>
+                                <div class="circle2"></div>
+                                <div class="circle3"></div>
+                                <div class="circle4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </section>
+        <!-- end hero section -->
+
+        <section class="section" id="process">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h1 class="mb-3 ff-secondary fw-bold lh-base">Comment <span class="text-primary">Retrivio</span> vous aide ?</h1>
+                            <p class="text-muted">Trop facile de trouver un objet</p>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!--end row-->
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card shadow-lg">
+                            <div class="card-body p-4">
+                                <h1 class="fw-bold display-5 ff-secondary mb-4 text-primary position-relative">
+                                    <div class="job-icon-effect"></div>
+                                    <span>1</span>
+                                </h1>
+                                <h6 class="fs-17 mb-2">Déclarer un Objet Perdu ou Trouvé</h6>
+                                <p class="text-muted mb-0 fs-15">Remplissez un formulaire avec des informations clées</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card shadow-none">
+                            <div class="card-body p-4">
+                                <h1 class="fw-bold display-5 ff-secondary mb-4 text-primary position-relative">
+                                    <div class="job-icon-effect"></div>
+                                    <span>2</span>
+                                </h1>
+                                <h6 class="fs-17 mb-2">Demander une Mise en relation</h6>
+                                <p class="text-muted mb-0 fs-15">Une fois votre objet trouvé demandez une mise en relation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card shadow-none">
+                            <div class="card-body p-4">
+                                <h1 class="fw-bold display-5 ff-secondary mb-4 text-primary position-relative">
+                                    <div class="job-icon-effect"></div>
+                                    <span>3</span>
+                                </h1>
+
+                                <h6 class="fs-17 mb-2">Récupérez votre Objet</h6>
+                                <p class="text-muted mb-0 fs-15">
+                                    Une fois la mise en relation concluante, récupérer votre objet
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--end container-->
+        </section>
+
+        <!-- start candidates -->
+        <section class="section bg-light" id="categories">
+            <div class="bg-overlay bg-overlay-pattern"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h1 class="mb-3 ff-secondary fw-bold text-capitalize lh-base"><span class="text-primary">Témoignages</span></h1>
+                            <p class="text-muted mb-4"></p>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="swiper candidate-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="card text-center">
+                                        <div class="card-body p-4">
+                                            <img th:src="@{/images/users/avatar-2.jpg}" alt="" class="rounded-circle avatar-md mx-auto d-block">
+                                            <h5 class="fs-17 mt-3 mb-2">Nancy Martino</h5>
+                                            <p class="text-muted fs-13 mb-3">Creative Designer</p>
+
+                                            <p class="text-muted mb-4 fs-14">
+                                                <i class="ri-map-pin-2-line text-primary me-1 align-bottom"></i> Escondido, California
+                                            </p>
+
+                                            <a href="#!" class="btn btn-secondary w-100">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card text-center">
+                                        <div class="card-body p-4">
+                                            <img th:src="@{/images/users/avatar-3.jpg}" alt="" class="rounded-circle avatar-md mx-auto d-block">
+                                            <h5 class="fs-17 mt-3 mb-2">Glen Matney</h5>
+                                            <p class="text-muted fs-13 mb-3">Marketing Director</p>
+                                    
+                                            <p class="text-muted mb-4 fs-14">
+                                                <i class="ri-map-pin-2-line text-primary me-1 align-bottom"></i> Escondido, California
+                                            </p>
+                                    
+                                            <a href="#!" class="btn btn-secondary w-100">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card text-center">
+                                        <div class="card-body p-4">
+                                            <img th:src="@{/images/users/avatar-10.jpg}" alt="" class="rounded-circle avatar-md mx-auto d-block">
+                                            <h5 class="fs-17 mt-3 mb-2">Alexis Clarke</h5>
+                                            <p class="text-muted fs-13 mb-3">Product Manager</p>
+                                    
+                                            <p class="text-muted mb-4 fs-14">
+                                                <i class="ri-map-pin-2-line text-primary me-1 align-bottom"></i> Escondido, California
+                                            </p>
+                                    
+                                            <a href="#!" class="btn btn-secondary w-100">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card text-center">
+                                        <div class="card-body p-4">
+                                            <img th:src="@{/images/users/avatar-8.jpg}" alt="" class="rounded-circle avatar-md mx-auto d-block" />
+                                            <h5 class="fs-17 mt-3 mb-2">James Price</h5>
+                                            <p class="text-muted fs-13 mb-3">Product Designer</p>
+                                    
+                                            <p class="text-muted mb-4 fs-14">
+                                                <i class="ri-map-pin-2-line text-primary me-1 align-bottom"></i> Escondido, California
+                                            </p>
+                                    
+                                            <a href="#!" class="btn btn-secondary w-100">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card text-center">
+                                        <div class="card-body p-4">
+                                            <img th:src="@{/images/users/avatar-5.jpg}" alt="" class="rounded-circle avatar-md mx-auto d-block" />
+                                            <h5 class="fs-17 mt-3 mb-2">Michael Morris</h5>
+                                            <p class="text-muted fs-13 mb-3">Full Stack Developer</p>
+                                    
+                                            <p class="text-muted mb-4 fs-14">
+                                                <i class="ri-map-pin-2-line text-primary me-1 align-bottom"></i> Escondido, California
+                                            </p>
+                                    
+                                            <a href="#!" class="btn btn-secondary w-100">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end container -->
+        </section>
+        <!-- end candidates -->
+
+
+
+
+
+        <!-- Start footer -->
+        <footer class="custom-footer bg-dark py-5 position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mt-4">
+                        <div>
+                            <div>
+                                <h1 class="text-white">Retrivio</h1>
+                            </div>
+                            <div class="mt-4 fs-15">
+                                <p>Premium Multipurpose Admin & Dashboard Template</p>
+                                <p>You can build any type of web application like eCommerce, CRM, CMS, Project management apps, Admin Panels, etc using Velzon.</p>
+                                <ul class="list-inline mb-0 footer-social-link">
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);" class="avatar-xs d-block">
+                                            <div class="avatar-title rounded-circle">
+                                                <i class="ri-facebook-fill"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);" class="avatar-xs d-block">
+                                            <div class="avatar-title rounded-circle">
+                                                <i class="ri-github-fill"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);" class="avatar-xs d-block">
+                                            <div class="avatar-title rounded-circle">
+                                                <i class="ri-linkedin-fill"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);" class="avatar-xs d-block">
+                                            <div class="avatar-title rounded-circle">
+                                                <i class="ri-google-fill"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);" class="avatar-xs d-block">
+                                            <div class="avatar-title rounded-circle">
+                                                <i class="ri-dribbble-line"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 ms-lg-auto">
+                        <div class="row">
+                            <div class="col-sm-4 mt-4">
+                                <h5 class="text-white mb-0">Company</h5>
+                                <div class="text-muted mt-3">
+                                    <ul class="list-unstyled ff-secondary footer-list fs-15">
+                                        <li><a href="pages-profile.html">About Us</a></li>
+                                        <li><a href="pages-gallery.html">Gallery</a></li>
+                                        <li><a href="pages-team.html">Team</a></li>
+                                        <li><a href="pages-pricing.html">Pricing</a></li>
+                                        <li><a href="pages-timeline.html">Timeline</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mt-4">
+                                <h5 class="text-white mb-0">For Jobs</h5>
+                                <div class="text-muted mt-3">
+                                    <ul class="list-unstyled ff-secondary footer-list fs-15">
+                                        <li><a href="apps-job-lists.html">Job List</a></li>
+                                        <li><a href="apps-job-application.html">application</a></li>
+                                        <li><a href="apps-job-new.html">New Job</a></li>
+                                        <li><a href="apps-job-companies-lists.html">Company List</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mt-4">
+                                <h5 class="text-white mb-0">Support</h5>
+                                <div class="text-muted mt-3">
+                                    <ul class="list-unstyled ff-secondary footer-list fs-15">
+                                        <li><a href="pages-faqs.html">FAQ</a></li>
+                                        <li><a href="pages-faqs.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row text-center text-sm-start align-items-center mt-5">
+                    <div class="col-sm-6">
+                        <div>
+                            <p class="copy-rights mb-0">
+                                <script> document.write(new Date().getFullYear()) </script> © Velzon - Themesbrand
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-end mt-3 mt-sm-0">
+                            <ul class="list-inline mb-0 footer-list gap-4 fs-15">
+                                <li class="list-inline-item">
+                                    <a href="">Privacy Policy</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="">Terms & Conditions</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="">Security</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer -->
+
+
+        <!--start back-to-top-->
+        <button onclick="topFunction()" class="btn btn-info btn-icon landing-back-top" id="back-to-top">
+            <i class="ri-arrow-up-line"></i>
+        </button>
+        <!--end back-to-top-->
+
+    </div>
+    <!-- end layout wrapper -->
+
+
+    <!-- JAVASCRIPT -->
+    <script th:src="@{/libs/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/libs/simplebar/simplebar.min.js}"></script>
+    <script th:src="@{/libs/node-waves/waves.min.js}"></script>
+    <script th:src="@{/libs/feather-icons/feather.min.js}"></script>
+    <script th:src="@{/js/pages/plugins/lord-icon-2.1.0.js}"></script>
+    <script th:src="@{/js/plugins.js}"></script>
+
+    <!--Swiper slider js-->
+    <script th:src="@{/libs/swiper/swiper-bundle.min.js}"></script>
+
+    <!--job landing init -->
+    <script th:src="@{/js/pages/job-lading.init.js}"></script>
+</body>
+
+
+<!-- Mirrored from themesbrand.com/velzon/html/creative/job-landing.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Apr 2024 19:55:05 GMT -->
+</html>

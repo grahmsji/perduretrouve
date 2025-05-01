@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/publicBase}">
+<head>
+    <title layout:fragment="title">Mise en relation</title>
+</head>
+<body>
+<div layout:fragment="content" class="col-xxl-8" style="margin: 125px 0;">
+
+    <!--  <div class="row">-->
+    <!--    <div class="col-12">-->
+    <!--      <div class="page-title-box d-sm-flex align-items-center justify-content-between">-->
+    <!--        <h4 class="mb-sm-0">Déclarer un Objet PERDU</h4>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <h1 class="text-center">Demande de mise en relation</h1>
+    <form th:action="@{/found/connect}" class="card" method="post">
+
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <div class="col-lg-12">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <input type="hidden" name="lostCode" th:value="${lostCode}" />
+
+                        <label>Entrez le code de votre objet trouvé *</label>
+                        <input type="text" name="foundCode" required placeholder="FND-XXXXXX" class="form-control"/>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12">
+            <div class="card-body">
+                <div class="row">
+                    <!--Description Row -->
+                    <div class="col-12">
+                        <button type="submit" class="w-100 btn btn-primary">Soumettre</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

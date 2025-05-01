@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/publicBase}">
+<head>
+    <title layout:fragment="title">Code de demande</title>
+</head>
+<body>
+    <div layout:fragment="content" class="col-xxl-8 d-flex justify-content-center align-items-center" style="margin: 125px 0; min-height: 60vh;">
+        <div>
+            <h4 class="" style="margin-bottom: 0 0 20px 0;">Votre code est le: </h4>
+            <h1 th:text="${code}"></h1>
+            <h4 class="" style="margin-bottom: 0 0 20px 0;">Copiez-le et gardez-le jalousement, il vous servira par la suite</h4>
+
+            <a th:href="@{/lost/related-found-request/{code}(code=${code})}" class="btn btn-primary">Étape suivante</a>
+        </div>
+
+    </div>
+</body>
+</html>
