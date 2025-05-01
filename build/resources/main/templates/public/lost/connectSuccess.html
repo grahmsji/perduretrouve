@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/publicBase}">
+<head>
+    <title layout:fragment="title">Mise en relation réussie</title>
+</head>
+<body>
+<div layout:fragment="content" class="col-xxl-8 d-flex justify-content-center align-items-center" style="margin: 125px 0; min-height: 60vh;">
+    <div>
+        <h1 class="text-center">Votre demande de mise en relation à été enrégistrée! 🎉</h1>
+        <p class="text-center">Si votre demande est approuvée, vous recevrez sous peu un e-mail d'un administrateur fournissant des détails supplémentaires concernant la procédure d'échange.</p>
+        <a th:href="@{/}" class="w-100 btn btn-primary">Retourner à l'acceuil</a>
+    </div>
+</div>
+
+</body>
+</html>

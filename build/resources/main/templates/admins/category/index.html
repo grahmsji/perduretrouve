@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layout/dashBase}">>
+<head><title>Categories</title></head>
+<body>
+<div layout:fragment="content">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mt-3">
+            <li class="breadcrumb-item"><a href="#"><i class="ri-home-5-fill"></i></a></li>
+            <li class="breadcrumb-item">Dashboard</li>
+            <li class="breadcrumb-item active" aria-current="page">Catégorie</li>
+        </ol>
+    </nav>
+
+    <div class="row mt-4">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h5 class="card-title mb-0">Liste des Catégories</h5>
+                    <a th:href="@{/admins/category/create}" class="btn btn-primary">
+                        Créer une Catégorie
+                    </a>
+                </div>
+
+                <div class="card-body">
+                    <table id="example" class="table table-bordered dt-responsive nowrap table-striped align-middle">
+                        <thead>
+                        <tr>
+                            <th data-ordering="false">Nom</th>
+
+                            <th data-ordering="false">Date de Creation</th>
+                            <th data-ordering="false">Date de Modification</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr th:each="category : ${categories}">
+                            <td th:text="${category.name}">Ortniel </td>
+                            <td th:text="${category.createdAt}">Dona</td>
+                            <td th:text="${category.updatedAt}">ADOUMASSE</td>
+                            <td>
+                                <div class="dropdown d-inline-block">
+                                    <button class="btn btn-soft-secondary btn-sm dropdown" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="ri-more-fill align-middle"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a th:href="@{'/admins/category/edit/' + ${category.id}}"
+                                               class="dropdown-item edit-item-btn"><i
+                                                class="ri-pencil-fill align-bottom me-2 text-muted"></i>
+                                            Modifier</a></li>
+                                        <li>
+                                            <form th:action="@{'/admins/category/delete/' + ${category.id}}" method="post">
+                                                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                                                <input type="hidden" name="_method" value="delete"/>
+                                                <button type="submit" onclick="return confirm('Are you sure?')" class="dropdown-item remove-item-btn" > <i class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
+                                                    Supprimer</button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

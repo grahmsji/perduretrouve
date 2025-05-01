@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/publicBase}">
+<head>
+  <title layout:fragment="title">Déclarer un Objet Perdu</title>
+</head>
+<body>
+<div layout:fragment="content" class="col-xxl-8" style="margin: 125px 0;">
+
+<!--  <div class="row">-->
+<!--    <div class="col-12">-->
+<!--      <div class="page-title-box d-sm-flex align-items-center justify-content-between">-->
+<!--        <h4 class="mb-sm-0">Déclarer un Objet PERDU</h4>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+  <h1 class="text-center">Déclarer un Objet</h1>
+  <form th:action="@{/lost/create}" th:object="${lost}" method="post" enctype="multipart/form-data" class="card">
+    <div class="col-lg-12">
+
+      <div class="card-body">
+        <div class="row g-3">
+          <!--Top Row-->
+          <div class="col-sm-6">
+            <label>Quand ?</label>
+            <input type="date" th:field="*{lostDate}" required class="form-control"/>
+            <div th:if="${#fields.hasErrors('lostDate')}" th:errors="*{lostDate}">Name error</div>
+          </div>
+
+          <div class="col-sm-6">
+            <label>Où ?</label>
+            <input type="text" th:field="*{lostPlace}" required class="form-control" placeholder="Ex: Benin - Cotonou"/>
+            <div th:if="${#fields.hasErrors('lostPlace')}" th:errors="*{lostPlace}">Name error</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!--Csrf Token-->
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    <div class="col-lg-12">
+      <div class="card-body">
+        <div class="row g-3">
+          <!--Middle Row-->
+          <div class="col-sm-6">
+            <label>Nom *</label>
+            <input type="text" th:field="*{name}" required class="form-control" placeholder="Ex: Portefeuille noir perdu près du parc."/>
+            <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+          </div>
+
+          <div class="col-sm-6">
+            <label>Couleur *</label>
+            <input type="text" th:field="*{color}" required class="form-control" placeholder="Ex: Rouge"/>
+            <div th:if="${#fields.hasErrors('color')}" th:errors="*{color}">Name error</div>
+          </div>
+
+          <div class="col-sm-4">
+            <label>Preuve d'authenticité (facultatif):</label>
+            <input type="text" th:field="*{proof}" class="form-control" placeholder="Ex: La lettre G est gravé dans le cuir" />
+            <div th:if="${#fields.hasErrors('proof')}" th:errors="*{proof}">Name error</div>
+          </div>
+          <div class="col-sm-4">
+            <label>Etat *</label>
+            <select th:field="*{state}" required class="form-select">
+              <option value="">Indiquez le niveau d'usure</option>
+              <option value="Neuf">Neuf</option>
+              <option value="Satisfaisant">Satisfaisant</option>
+              <option value="Peu Abimé">Peu Abimé</option>
+              <option value="Abimé">Abimé</option>
+            </select>
+            <div th:if="${#fields.hasErrors('state')}" th:errors="*{state}">Name error</div>
+          </div>
+          <div class="col-sm-4">
+            <label>Catégorie *</label>
+            <select th:field="*{categoryId}" required class="form-select">
+              <option value="">Choisir une catégorie</option>
+              <option th:each="cat : ${categories}" th:value="${cat.id}" th:text="${cat.name}"></option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="card-body">
+        <div class="row">
+          <!--Description Row -->
+          <div class="col-12">
+            <label>Détails  :</label>
+            <textarea th:field="*{description}" required class="form-control"  placeholder="Décrire au mieux l'objet et ses éléments distinctifs."></textarea>
+            <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Name error</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-12">
+      <div class="card-body">
+        <div class="row">
+          <!--Picture Row -->
+          <div class="col-12">
+            <label for="lostPicture">Photo Récente de l'objet (facultatif)</label>
+            <input type="file" name="lostPicture" id="lostPicture" class="form-control" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-12">
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label>Votre nom complet *</label>
+            <input type="text" th:field="*{loserFullName}" required class="form-control" placeholder="Ex: Ortniel ADOUMASSE"/>
+            <div th:if="${#fields.hasErrors('loserFullName')}" th:errors="*{loserFullName}">Name error</div>
+          </div>
+          <div class="col-sm-6">
+            <label>Votre addresse Mail *</label>
+            <input type="text" th:field="*{loserEmail}" required  class="form-control" placeholder="Ex: ortnieladoumasse@gmail.com"/>
+            <div th:if="${#fields.hasErrors('loserEmail')}" th:errors="*{loserEmail}">Name error</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-lg-12">
+        <div class="card-body">
+          <div class="row">
+            <!--Description Row -->
+            <div class="col-12">
+              <button type="submit" class="w-100 btn btn-primary">Soumettre</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </form>
+
+</div>
+
+</body>
+</html>
